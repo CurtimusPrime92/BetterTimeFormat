@@ -16,7 +16,30 @@ namespace BetterTimeFormat
     [StaticConstructorOnStartup]
     public static class BetterTimeFormat
     {
-        // Placeholder
+        // Credits to Palota for the method, posted here:
+        // https://stackoverflow.com/questions/24437274/string-indexof-search-for-whole-word-match/47638909#47638909
+        private static int IndexOfWholeWord(this string str, string word, StringComparison comparison)
+        {
+            for (var j = 0;
+                j < str.Length &&
+                (j = str.IndexOf(word, j, comparison)) >= 0;
+                j++)
+                if ((j == 0 || !char.IsLetterOrDigit(str, j - 1)) &&
+                    (j + word.Length == str.Length || !char.IsLetterOrDigit(str, j + word.Length)))
+                    return j;
+            return -1;
+        }
+        // Credits to MethodMan for the method, posted here:
+        // https://stackoverflow.com/questions/8809354/replace-first-occurrence-of-pattern-in-a-string/8809437#8809437
+        public static string ReplaceFirst(string text, string search, string replace)
+        {
+            var pos = text.IndexOf(search, StringComparison.Ordinal);
+            if (pos < 0)
+            {
+                return text;
+            }
+            return text.Substring(0, pos) + replace + text.Substring(pos + search.Length);
+        }
     }
 
     [StaticConstructorOnStartup]
@@ -74,14 +97,43 @@ namespace BetterTimeFormat
                 ___dateStringYear = num2;
             }
 
-            var dayPercent = GenLocalDate.DayPercent(Find.CurrentMap);
-            var hours = Math.Floor(dayPercent * 24);
-            var minutes = Math.Floor(dayPercent * 24 % 1 * 60);
-            var time = $"{hours,0:00}:{minutes,0:00}";
+            var userTime = "";
+            if (!BetterTimeFormatMod.UpdateTime) {
+                userTime = BetterTimeFormatMod.settings.timeFormat;
+                var dayPercent = GenLocalDate.DayPercent(Find.CurrentMap);
 
+                if (BetterTimeFormatMod.UpdateHours) {
+                    var hours = Math.Floor(dayPercent * 24);
+                    if (BetterTimeFormatMod.settings.twelveHourFormat)
+                    {
+                        hours = dayPercent < 0.6 ? hours : hours - 12;
+                    }
+                    
+                    userTime = userTime.ReplaceFirst("HH", $"{hours,0:00}");
+                    userTime = userTime.ReplaceFirst("H", $"{hours,0}");
+                }
+                
+                if (BetterTimeFormatMod.UpdateMinutes) {
+                    var minutes = Math.Floor(dayPercent * 24 % 1 * 60);
+                    userTime = userTime.ReplaceFirst("MM", $"{minutes,0:00}");
+                    userTime = userTime.ReplaceFirst("M", $"{minutes,0:0}");
+                }
+                
+                if (BetterTimeFormatMod.UpdateSeconds) {
+                    var seconds = Math.Floor(dayPercent * 24 % 1 * 60 % 1 * 60);
+                    userTime = userTime.ReplaceFirst("SS", $"{seconds,0:00}");
+                    userTime = userTime.ReplaceFirst("S", $"{seconds,0:0}");
+                }
+                
+                if (BetterTimeFormatMod.settings.twelveHourFormat) {
+                    var notation = dayPercent < 0.5 ? BetterTimeFormatMod.settings.amString : BetterTimeFormatMod.settings.pmString;
+                    userTime = userTime.ReplaceFirst("N", notation);
+                }
+            }
+            
             Text.Font = GameFont.Small;
             var num3 =
-                Mathf.Max(Mathf.Max(Text.CalcSize(time).x, Text.CalcSize(___dateString).x), Text.CalcSize(str).x) + 7f;
+                Mathf.Max(Mathf.Max(Text.CalcSize(userTime).x, Text.CalcSize(___dateString).x), Text.CalcSize(str).x) + 7f;
             dateRect.xMin = dateRect.xMax - num3;
             if (Mouse.IsOver(dateRect))
                 Widgets.DrawHighlight(dateRect);
@@ -90,7 +142,7 @@ namespace BetterTimeFormat
             Text.Anchor = TextAnchor.UpperRight;
             var rect = dateRect.AtZero();
             rect.xMax -= 7f;
-            Widgets.Label(rect, time);
+            Widgets.Label(rect, userTime);
             rect.yMin += 26f;
             Widgets.Label(rect, ___dateString);
             rect.yMin += 26f;
