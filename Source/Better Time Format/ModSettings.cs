@@ -1,14 +1,20 @@
-﻿using System.Net.Configuration;
-using Verse;
+﻿// BetterTimeFormat - ModSettings.cs
+// Created on 2022.10.25
+// Last modified at 2022.10.25 18:56
+
+#region
 using UnityEngine;
+
+using Verse;
+#endregion
 
 namespace BetterTimeFormat
 {
     public class BetterTimeFormatSettings : ModSettings
     {
-        public string timeFormat = "HH:MM";
         public string amString = "AM";
         public string pmString = "PM";
+        public string timeFormat = "HH:MM";
         public bool twelveHourFormat;
 
         public override void ExposeData()
@@ -44,10 +50,10 @@ namespace BetterTimeFormat
             var lS = new Listing_Standard();
             lS.Begin(inRect);
             lS.verticalSpacing = 12f;
-            
+
             lS.Label("BetterTimeFormatDesc".Translate());
             settings.timeFormat = lS.TextEntryLabeled("BetterTimeFormatLabel".Translate(), settings.timeFormat);
-            
+
             lS.Label("BetterTimeFormat12hDesc".Translate());
             lS.CheckboxLabeled("BetterTimeFormat12hLabel".Translate(), ref settings.twelveHourFormat);
 
@@ -55,11 +61,11 @@ namespace BetterTimeFormat
             {
                 lS.Label("BetterTimeFormatAMDesc".Translate());
                 settings.amString = lS.TextEntryLabeled("BetterTimeFormatAMLabel".Translate(), settings.amString);
-                
+
                 lS.Label("BetterTimeFormatPMDesc".Translate());
                 settings.pmString = lS.TextEntryLabeled("BetterTimeFormatPMLabel".Translate(), settings.pmString);
             }
-            
+
             lS.End();
 
             UpdateSeconds = settings.timeFormat.Contains("S");
