@@ -1,6 +1,6 @@
 ﻿// BetterTimeFormat - BetterTime.cs
-// Created on 2022.10.25
-// Last modified at 2022.10.25 18:59
+// Created on 2022.11.09
+// Last modified at 2022.11.14 16:50
 
 #region
 using System;
@@ -47,18 +47,6 @@ namespace BetterTimeFormat
         }
     }
 
-    [StaticConstructorOnStartup]
-    internal static class HarmonyPatches
-    {
-        static HarmonyPatches()
-        {
-            var harmony = new Harmony("net.netrve.bettertime");
-
-            Log.Message("[BetterTimeFormat] Applying Harmony patch.");
-            harmony.PatchAll();
-        }
-    }
-
     [HarmonyPatch(typeof(DateReadout), "DateOnGUI")]
     internal static class Patch_BetterTimeFormat
     {
@@ -100,38 +88,38 @@ namespace BetterTimeFormat
             }
 
             var userTime = "";
-            if (BetterTimeFormatMod.UpdateTime)
+            if (BetterTimeFormatMod.Settings.UpdateTime)
             {
-                userTime = BetterTimeFormatMod.settings.timeFormat;
+                userTime = BetterTimeFormatMod.Settings.TimeFormat;
                 var dayPercent = GenLocalDate.DayPercent(Find.CurrentMap);
 
-                if (BetterTimeFormatMod.UpdateHours)
+                if (BetterTimeFormatMod.Settings.UpdateHours)
                 {
                     var hours = Math.Floor(dayPercent * 24);
-                    if (BetterTimeFormatMod.settings.twelveHourFormat)
+                    if (BetterTimeFormatMod.Settings.TwelveHourFormat)
                         hours = dayPercent < 0.6 ? hours : hours - 12;
 
                     userTime = userTime.ReplaceFirst("HH", $"{hours,0:00}");
                     userTime = userTime.ReplaceFirst("H", $"{hours,0}");
                 }
 
-                if (BetterTimeFormatMod.UpdateMinutes)
+                if (BetterTimeFormatMod.Settings.UpdateMinutes)
                 {
                     var minutes = Math.Floor(dayPercent * 24 % 1 * 60);
                     userTime = userTime.ReplaceFirst("MM", $"{minutes,0:00}");
                     userTime = userTime.ReplaceFirst("M", $"{minutes,0:0}");
                 }
 
-                if (BetterTimeFormatMod.UpdateSeconds)
+                if (BetterTimeFormatMod.Settings.UpdateSeconds)
                 {
                     var seconds = Math.Floor(dayPercent * 24 % 1 * 60 % 1 * 60);
                     userTime = userTime.ReplaceFirst("SS", $"{seconds,0:00}");
                     userTime = userTime.ReplaceFirst("S", $"{seconds,0:0}");
                 }
 
-                if (BetterTimeFormatMod.settings.twelveHourFormat)
+                if (BetterTimeFormatMod.Settings.TwelveHourFormat)
                 {
-                    var notation = dayPercent < 0.5 ? BetterTimeFormatMod.settings.amString : BetterTimeFormatMod.settings.pmString;
+                    var notation = dayPercent < 0.5 ? BetterTimeFormatMod.Settings.AmString : BetterTimeFormatMod.Settings.PmString;
                     userTime = userTime.ReplaceFirst("N", notation);
                 }
             }
