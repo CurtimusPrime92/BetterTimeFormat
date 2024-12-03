@@ -1,0 +1,5 @@
+# Changelog for BetterTimeFormat
+
+1.5.1 - Updated for 1.5, replaced the mod-option for 12h clock with the game-option instead
+Used DeepL to update translations for ChineseSimplified, French, German
+
