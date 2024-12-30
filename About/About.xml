@@ -55,10 +55,7 @@ Well then I have the mod for you! Better Time Format changes the display of the 
 [h1] Supported Versions and Requirements [/h1]
 This mod is made for RimWorld 1.2 and up, and requires Harmony 2.x
 
-[h1] Source Code[/h1]
-[url=github.com/Dakraid/RW_BetterTimeFormat/]Github Source Code[/url] 
-
-[h1] Parsing &amp;amp; Performance [/h1]
+[h1] Parsing and Performance [/h1]
 The parsing is somewhat simple, on purpose. I traded accuracy for performance, while something like a regular expression would be more accurate, it isn't something you want to use for a game. So please excuse if you sometimes get weird displays with certain inputs. It should work fine for 99% of the cases.
 
 This mod modifies an UI drawing method and on top of that also pulls some strings to get the user format going. I have taken the best precautions I could take to make sure everything runs as optimal as I can see.
@@ -79,6 +76,8 @@ Thanks to all the helpful people over at the RimWorld Discord who have helped me
 [*] Use [url=https://github.com/RimSort/RimSort/releases/latest]RimSort[/url] to sort your mods
 [/list] 
 
-[url=https://steamcommunity.com/sharedfiles/filedetails/changelog/][img]https://img.shields.io/github/v/release/emipa606/BetterTimeFormat?label=latest%20version&amp;style=plastic&amp;color=9f1111&amp;labelColor=black[/img][/url] | tags:  clock,  format</description>
-  <modVersion IgnoreIfNoMatchingField="True">1.5.1</modVersion>
+[url=https://steamcommunity.com/sharedfiles/filedetails/changelog/][img]https://img.shields.io/github/v/release/emipa606/BetterTimeFormat?label=latest%20version&amp;style=plastic&amp;color=9f1111&amp;labelColor=black[/img][/url] | tags:  clock,  format 
+
+[url=https://steamcommunity.com/sharedfiles/filedetails/changelog/3377406241][img]https://img.shields.io/github/v/release/emipa606/BetterTimeFormat?label=latest%20version&amp;style=plastic&amp;color=9f1111&amp;labelColor=black[/img][/url] | tags:  clock,  format</description>
+  <modVersion IgnoreIfNoMatchingField="True">1.5.2</modVersion>
 </ModMetaData>

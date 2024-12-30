@@ -1,4 +1,4 @@
-# [Better Time Format (Continued)]()
+# [Better Time Format (Continued)](https://steamcommunity.com/sharedfiles/filedetails/?id=3377406241)
 
 ![Image](https://i.imgur.com/buuPQel.png)
 
@@ -30,11 +30,7 @@ Well then I have the mod for you! Better Time Format changes the display of the 
 
 This mod is made for RimWorld 1.2 and up, and requires Harmony 2.x
 
-#  Source Code
-
-[Github Source Code](github.com/Dakraid/RW_BetterTimeFormat/) 
-
-#  Parsing &amp; Performance 
+#  Parsing and Performance 
 
 The parsing is somewhat simple, on purpose. I traded accuracy for performance, while something like a regular expression would be more accurate, it isn't something you want to use for a game. So please excuse if you sometimes get weird displays with certain inputs. It should work fine for 99% of the cases.
 
@@ -60,4 +56,6 @@ Thanks to all the helpful people over at the RimWorld Discord who have helped me
 
  
 
-[![Image](https://img.shields.io/github/v/release/emipa606/BetterTimeFormat?label=latest%20version&style=plastic&color=9f1111&labelColor=black)](https://steamcommunity.com/sharedfiles/filedetails/changelog/) | tags:  clock,  format
+[![Image](https://img.shields.io/github/v/release/emipa606/BetterTimeFormat?label=latest%20version&style=plastic&color=9f1111&labelColor=black)](https://steamcommunity.com/sharedfiles/filedetails/changelog/) | tags:  clock,  format 
+
+[![Image](https://img.shields.io/github/v/release/emipa606/BetterTimeFormat?label=latest%20version&style=plastic&color=9f1111&labelColor=black)](https://steamcommunity.com/sharedfiles/filedetails/changelog/3377406241) | tags:  clock,  format

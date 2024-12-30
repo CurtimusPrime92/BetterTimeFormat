@@ -63,7 +63,7 @@ internal static class DateReadout_DateOnGUI
             if (BetterTimeFormatMod.Settings.UpdateHours)
             {
                 var hours = Math.Floor(dayPercent * 24);
-                if (BetterTimeFormatMod.Settings.TwelveHourFormat)
+                if (Prefs.TwelveHourClockMode)
                 {
                     hours = dayPercent < 0.6 ? hours : hours - 12;
                 }
@@ -86,7 +86,7 @@ internal static class DateReadout_DateOnGUI
                 userTime = userTime.ReplaceFirst("S", $"{seconds,0:0}");
             }
 
-            if (BetterTimeFormatMod.Settings.TwelveHourFormat)
+            if (Prefs.TwelveHourClockMode)
             {
                 var notation = dayPercent < 0.5
                     ? BetterTimeFormatMod.Settings.AmString
