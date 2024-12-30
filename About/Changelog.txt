@@ -1,5 +1,8 @@
 # Changelog for BetterTimeFormat
 
+1.5.3 - Fixed the 12 hour clock switching to late
+
+
 1.5.2 - Fixed the am/pm output
 
 

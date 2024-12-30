@@ -56,6 +56,4 @@ Thanks to all the helpful people over at the RimWorld Discord who have helped me
 
  
 
-[![Image](https://img.shields.io/github/v/release/emipa606/BetterTimeFormat?label=latest%20version&style=plastic&color=9f1111&labelColor=black)](https://steamcommunity.com/sharedfiles/filedetails/changelog/) | tags:  clock,  format 
-
 [![Image](https://img.shields.io/github/v/release/emipa606/BetterTimeFormat?label=latest%20version&style=plastic&color=9f1111&labelColor=black)](https://steamcommunity.com/sharedfiles/filedetails/changelog/3377406241) | tags:  clock,  format
