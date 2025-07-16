@@ -7,5 +7,12 @@
     " clock",
     " format"
   ],
-  "PreviewVersion": "1.5"
+  "PreviewVersion": "1.6",
+  "Patches": false,
+  "Defs": false,
+  "Assemblies": true,
+  "LinesOfCode": 10895,
+  "LinesOfXML": 0,
+  "CodeBaseSize": 64,
+  "LastXmlCleaning": "2025-07-16T20:55:24.7825035+02:00"
 }

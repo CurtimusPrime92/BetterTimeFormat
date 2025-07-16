@@ -9,6 +9,7 @@
     <li>1.3</li>
     <li>1.4</li>
     <li>1.5</li>
+    <li>1.6</li>
   </supportedVersions>
   <modDependencies>
     <li>
@@ -29,7 +30,7 @@ Update of Netrves mod https://steamcommunity.com/sharedfiles/filedetails/?id=207
 [img]https://i.imgur.com/pufA0kM.png[/img]
 
 [table]
-    [tr][td][url=https://dsc.gg/mlie][img]https://i.imgur.com/zdzzBrc.png[/img][/url][/td] [td][url=https://github.com/emipa606/BetterTimeFormat][img]https://i.imgur.com/kTkpTOE.png[/img][/url][/td]
+    [tr][td][url=https://discord.gg/h5TY6DA][img]https://i.imgur.com/zdzzBrc.png[/img][/url][/td] [td][url=https://github.com/emipa606/BetterTimeFormat][img]https://i.imgur.com/kTkpTOE.png[/img][/url][/td]
     [/tr]
     [tr]
         [td][img]https://i.imgur.com/WjDSfUn.png[/img][/td]
@@ -69,7 +70,7 @@ Thanks to all the helpful people over at the RimWorld Discord who have helped me
 [list]
 [*] See if the the error persists if you just have this mod and its requirements active.
 [*] If not, try adding your other mods until it happens again.
-[*] Post your error-log using [url=https://steamcommunity.com/workshop/filedetails/?id=818773962]HugsLib[/url] or the standalone [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404]Uploader[/url] and command Ctrl+F12
+[*] Post your error-log using the [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404]Log Uploader[/url] or the standalone [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404]Uploader[/url] and command Ctrl+F12
 [*] For best support, please use the Discord-channel for error-reporting.
 [*] Do not report errors by making a discussion-thread, I get no notification of that.
 [*] If you have the solution for a problem, please post it to the GitHub repository.
@@ -77,5 +78,5 @@ Thanks to all the helpful people over at the RimWorld Discord who have helped me
 [/list] 
 
 [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/3377406241][img]https://img.shields.io/github/v/release/emipa606/BetterTimeFormat?label=latest%20version&amp;style=plastic&amp;color=9f1111&amp;labelColor=black[/img][/url] | tags:  clock,  format</description>
-  <modVersion IgnoreIfNoMatchingField="True">1.5.3</modVersion>
+  <modVersion IgnoreIfNoMatchingField="True">1.6.0</modVersion>
 </ModMetaData>

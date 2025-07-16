@@ -13,7 +13,6 @@ public static class BetterTimeFormat
 {
     static BetterTimeFormat()
     {
-        Log.Message("[BetterTimeFormat] Applying Harmony patch.");
         new Harmony("netrve.bettertime").PatchAll(Assembly.GetExecutingAssembly());
     }
 }

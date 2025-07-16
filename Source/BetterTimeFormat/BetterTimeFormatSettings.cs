@@ -15,7 +15,7 @@ public class BetterTimeFormatSettings : ModSettings
     public string AmString = "AM";
     public string PmString = "PM";
     public string TimeFormat = "HH:MM";
-    public bool TwelveHourFormat;
+    private bool twelveHourFormat;
     public bool UpdateHours;
     public bool UpdateMinutes;
     public bool UpdateSeconds;
@@ -26,7 +26,7 @@ public class BetterTimeFormatSettings : ModSettings
         Scribe_Values.Look(ref TimeFormat, "BetterTimeFormatLabel", "HH:MM");
         Scribe_Values.Look(ref AmString, "BetterTimeFormatAMLabel", "AM");
         Scribe_Values.Look(ref PmString, "BetterTimeFormatPMLabel", "PM");
-        Scribe_Values.Look(ref TwelveHourFormat, "BetterTimeFormat12hLabel");
+        Scribe_Values.Look(ref twelveHourFormat, "BetterTimeFormat12hLabel");
         Scribe_Values.Look(ref UpdateHours, "BetterTimeUpdateHours", true);
         Scribe_Values.Look(ref UpdateMinutes, "BetterTimeUpdateMinutes", true);
         Scribe_Values.Look(ref UpdateSeconds, "BetterTimeUpdateSeconds");

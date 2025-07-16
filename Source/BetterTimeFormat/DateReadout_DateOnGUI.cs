@@ -17,10 +17,10 @@ internal static class DateReadout_DateOnGUI
         ref string ___dateString)
     {
         Vector2 longLat;
-        switch (WorldRendererUtility.WorldRenderedNow)
+        switch (WorldRendererUtility.WorldRendered)
         {
-            case true when Find.WorldSelector.selectedTile >= 0:
-                longLat = Find.WorldGrid.LongLatOf(Find.WorldSelector.selectedTile);
+            case true when Find.WorldSelector.SelectedTile >= 0:
+                longLat = Find.WorldGrid.LongLatOf(Find.WorldSelector.SelectedTile);
                 break;
 
             case true when Find.WorldSelector.NumSelectedObjects > 0:
